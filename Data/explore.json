@@ -1,0 +1,42 @@
+[
+    {
+      "img": "https://links.papareact.com/5j2",
+      "location": "Pretoria",
+      "distance": "45-minute drive"
+    },
+    {
+      "img": "https://links.papareact.com/1to",
+      "location": "Sandton",
+      "distance": "4.5-hour drive"
+    },
+    {
+      "img": "https://links.papareact.com/40m",
+      "location": "Randburg",
+      "distance": "4.5-hour drive"
+    },
+    {
+      "img": "https://links.papareact.com/msp",
+      "location": "Soweto",
+      "distance": "4-hour drive"
+    },
+    {
+      "img": "https://links.papareact.com/2k3",
+      "location": "Midrand",
+      "distance": "45-minute drive"
+    },
+    {
+      "img": "https://links.papareact.com/ynx",
+      "location": "Zimbali",
+      "distance": "4.5-hour drive"
+    },
+    {
+      "img": "https://links.papareact.com/kji",
+      "location": "Atlone",
+      "distance": "6-hour drive"
+    },
+    {
+      "img": "https://links.papareact.com/41m",
+      "location": "Durban",
+      "distance": "5-hour drive"
+    }
+  ]
