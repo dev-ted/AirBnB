@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { format } from "date-fns";
 import ResultsCard from "../components/ResultsCard";
+import Map from "../components/Map";
 
 function Results({ results }) {
   const router = useRouter();
@@ -16,10 +17,10 @@ function Results({ results }) {
     <div className="">
       <Header placeholder={`${location} | ${range} | ${guests} guests`} />
 
-      <main className="flex">
+      <main className="flex  flex-col-reverse md:flex-row">
         <section className="flex-grow pt-14 px-6">
           <p className="text-xs">
-            400+ stays <span className="text-red-400"> {range} </span> for{" "}
+           {results.length} stays <span className="text-red-400"> {range} </span> for{" "}
             {guests} guests
           </p>
           <h1 className="text-2xl font-semibold mt-2 mb-6">
@@ -50,6 +51,9 @@ function Results({ results }) {
               ))}
             </div>
           </div>
+        </section>
+        <section className="inline-flex min-w-[800px]">
+          <Map results = {results} />
         </section>
       </main>
 

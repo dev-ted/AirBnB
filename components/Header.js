@@ -66,6 +66,7 @@ function Header({placeholder}) {
           placeholder={placeholder || "search places"}
         />
         <SearchIcon
+        onClick={searchHandler}
           className=" hidden md:inline-flex h-8 bg-red-400
          text-white rounded-full p-2 cursor-pointer md:mx-2"
         />
