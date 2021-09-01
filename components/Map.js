@@ -17,8 +17,8 @@ function Map({ results }) {
     longitude: center.longitude,
 
     width: "100%",
-    height: "100%",
-    zoom: 20,
+    height: "60%",
+    zoom: 80,
   });
 
   return (

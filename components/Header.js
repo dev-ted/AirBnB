@@ -58,6 +58,7 @@ function Header({placeholder}) {
       </div>
       <div className="flex items-center md:border-2 rounded-full py-2 md:shadow-sm ">
         <input
+        required
           onChange={(e) => setSearch(e.target.value)}
           value={search}
           type="search"
