@@ -24,7 +24,7 @@ function Map({ places }) {
   return (
     <ReactMapGL
       mapStyle="mapbox://styles/devted/ckt1b5j730uiy18qs481jczip"
-      mapboxApiAccessToken={process.env.mapbox_key}
+      mapboxApiAccessToken= 'pk.eyJ1IjoiZGV2dGVkIiwiYSI6ImNraXNueTR4bTB6N3IzMG55d256cXBkNDQifQ.uoISpXCQdR1MLGHP_BAyHA'
       {...viewport}
       onViewportChange={(viewport) => {
         setViewport(viewport);
