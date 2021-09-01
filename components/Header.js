@@ -15,6 +15,8 @@ import { useRouter } from "next/dist/client/router";
 
 function Header({placeholder}) {
   const [search, setSearch] = useState("");
+
+
   const [startDate, setStart] = useState(new Date());
   const [endDate, setEnd] = useState(new Date());
   const [guests, setGuests] = useState(1);
@@ -25,6 +27,8 @@ function Header({placeholder}) {
     setEnd(ranges.selection.endDate);
   };
   const searchHandler = () => {
+    
+   !search ? alert("Please enter a valid search") : 
       router.push({
           pathname: '/results',
           query: {
@@ -33,13 +37,11 @@ function Header({placeholder}) {
               endDate: endDate.toISOString(),
               guests
 
-          },
-          
+          }, 
 
       });
       setSearch("");
   }
-
   const selectionRange = {
     startDate: startDate,
     endDate: endDate,

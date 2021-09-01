@@ -1,5 +1,5 @@
 import { useRouter } from "next/dist/client/router";
-import React from "react";
+import React, { useEffect,useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { format } from "date-fns";
@@ -13,14 +13,36 @@ function Results({ results }) {
   const formattedEndDate = format(new Date(endDate), "dd MMM yyyy");
   const range = `from ${formattedStartDate} to  ${formattedEndDate}`;
 
+  const [places,setPlaces] = useState([]);
+
+  useEffect(() => {
+    //filter results by location
+   function searchPlace(){
+    let searchResults = []
+    searchResults = results.filter((data) => {
+      return data.location.toLowerCase() === location.toLowerCase();
+    });
+    setPlaces(searchResults);
+   }
+   searchPlace();
+
+    
+
+
+  },[location] )
+
+ 
+ 
+
   return (
-    <div className="">
+    <div className="flex flex-col ">
       <Header placeholder={`${location} | ${range} | ${guests} guests`} />
 
-      <main className="flex  flex-col-reverse md:flex-row">
+      {places.length ? (
+        <main className="flex  flex-col-reverse md:flex-row">
         <section className="flex-grow pt-14 px-6">
           <p className="text-xs">
-           {results.length} stays <span className="text-red-400"> {range} </span> for{" "}
+           {places.length} stays <span className="text-red-400 "> {range} </span> for{" "}
             {guests} guests
           </p>
           <h1 className="text-2xl font-semibold mt-2 mb-6">
@@ -37,7 +59,7 @@ function Results({ results }) {
 
           <div>
             <div className="flex flex-col">
-              {results.map((result) => (
+              {places.map((result) => (
                 <ResultsCard
                   img={result.img}
                   key={result.img}
@@ -53,9 +75,19 @@ function Results({ results }) {
           </div>
         </section>
         <section className="inline-flex min-w-[800px]">
-          <Map results = {results} />
+          <Map places = {places} />
+          
         </section>
       </main>
+
+      ) : (
+
+        <div>
+          no places
+        </div>
+      )}
+
+      
 
       <Footer />
     </div>

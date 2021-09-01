@@ -3,10 +3,10 @@ import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import { getCenter } from "geolib";
 import { HomeIcon } from "@heroicons/react/outline";
 
-function Map({ results }) {
+function Map({ places }) {
   const [selected, setSelected] = useState({});
   //turns the results into a list of coordinates
-  const coordinates = results.map((result) => ({
+  const coordinates = places.map((result) => ({
     longitude: result.long,
     latitude: result.lat,
   }));
@@ -17,8 +17,8 @@ function Map({ results }) {
     longitude: center.longitude,
 
     width: "100%",
-    height: "60%",
-    zoom: 80,
+    height: "100%",
+    zoom: 12,
   });
 
   return (
@@ -30,7 +30,7 @@ function Map({ results }) {
         setViewport(viewport);
       }}
     >
-      {results.map((result) => (
+      {places.map((result) => (
         <div key={result.long}>
           <Marker
             longitude={result.long}
